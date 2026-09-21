@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc">
+  <title id="title">Valid switching plans in the saved noisy simulation</title>
+  <desc id="desc">Warm-started QAOA 13.16 percent, uniform random choice 9.38 percent, standard QAOA 6.59 percent. Warm-started QAOA generated 539 valid plans in 4096 samples; standard QAOA generated 270.</desc>
+  <rect width="1200" height="350" rx="18" fill="#f4f8fb"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="44" y="52" fill="#142e41" font-size="25" font-weight="700">How often did each method find a valid plan?</text>
+    <text x="44" y="80" fill="#5e7583" font-size="16">IEEE 14-bus test · modeled noise · one-layer circuits · 4,096 samples each</text>
+
+    <g fill="#526b79" font-size="16">
+      <text x="44" y="135">Warm-started QAOA</text>
+      <text x="44" y="216">Uniform random</text>
+      <text x="44" y="297">Standard QAOA</text>
+    </g>
+    <g fill="#dfe9ef">
+      <rect x="260" y="106" width="720" height="40" rx="9"/>
+      <rect x="260" y="187" width="720" height="40" rx="9"/>
+      <rect x="260" y="268" width="720" height="40" rx="9"/>
+    </g>
+    <rect x="260" y="106" width="632" height="40" rx="9" fill="#20a989"/>
+    <rect x="260" y="187" width="450" height="40" rx="9" fill="#688da1"/>
+    <rect x="260" y="268" width="316" height="40" rx="9" fill="#7b68a7"/>
+    <g fill="#142e41" font-size="22" font-weight="700">
+      <text x="1000" y="135">13.16%</text>
+      <text x="1000" y="216">9.38%</text>
+      <text x="1000" y="297">6.59%</text>
+    </g>
+  </g>
+</svg>
