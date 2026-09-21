@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Grid Resilience Lab</title>
+  <desc id="desc">An electric grid network, with one failed connection and alternate safe routes, beside the title Grid Resilience Lab.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08172d"/><stop offset="1" stop-color="#14283d"/></linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#8ab6c7" opacity=".12"/></pattern>
+  </defs>
+  <rect width="1200" height="380" rx="20" fill="url(#bg)"/>
+  <rect width="1200" height="380" rx="20" fill="url(#dots)"/>
+  <path d="M0 305 Q320 245 575 340 T1200 280" fill="none" stroke="#276075" stroke-width="1" opacity=".45"/>
+  <path d="M0 328 Q350 265 600 355 T1200 312" fill="none" stroke="#276075" stroke-width="1" opacity=".35"/>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#3b6579" stroke-width="3" opacity=".8">
+      <path d="M750 112 846 72 948 111 1055 75 1120 135 1060 224 961 263 845 235 750 285 702 206 750 112"/>
+      <path d="M846 72 845 235M948 111 961 263M1055 75 1060 224M750 112 948 111M845 235 961 263M961 263 1120 135"/>
+    </g>
+    <path d="M750 112 846 72 948 111 1055 75 1120 135" stroke="#69dfc4" stroke-width="4"/>
+    <path d="M702 206 750 285 845 235 961 263 1060 224" stroke="#64d4ff" stroke-width="4"/>
+    <path d="M948 111 961 263" stroke="#ff927d" stroke-width="4" stroke-dasharray="7 10"/>
+  </g>
+  <g fill="#11283a" stroke="#81e7d0" stroke-width="3">
+    <circle cx="750" cy="112" r="10"/><circle cx="846" cy="72" r="10"/><circle cx="948" cy="111" r="10"/><circle cx="1055" cy="75" r="10"/><circle cx="1120" cy="135" r="10"/>
+    <circle cx="702" cy="206" r="10"/><circle cx="750" cy="285" r="10"/><circle cx="845" cy="235" r="10"/><circle cx="961" cy="263" r="10"/><circle cx="1060" cy="224" r="10"/>
+  </g>
+  <circle cx="955" cy="187" r="16" fill="#ff927d" opacity=".16"/>
+  <path d="m949 181 12 12m0-12-12 12" stroke="#ffb1a1" stroke-width="3" stroke-linecap="round"/>
+
+  <rect x="55" y="51" width="227" height="31" rx="15.5" fill="#183c4b" stroke="#3e847c"/>
+  <text x="169" y="71" text-anchor="middle" fill="#90edcf" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">RESEARCH PROTOTYPE</text>
+  <text x="54" y="155" fill="#f4f9fd" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Grid Resilience</text>
+  <text x="54" y="218" fill="#69dfc4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Lab</text>
+  <text x="57" y="270" fill="#c8d9e5" font-family="Arial, Helvetica, sans-serif" font-size="21">Safer switching after a power-line outage</text>
+  <path d="M57 307 H522" stroke="#486575" stroke-width="1"/>
+  <text x="57" y="340" fill="#88aab9" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="1">POWER GRID  /  CLASSICAL OPTIMIZATION  /  QAOA SIMULATION</text>
+</svg>
