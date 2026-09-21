@@ -1,0 +1,88 @@
+"""
+Standard Un-Warm-Started QAOA Baseline.
+Implements the conventional QAOA circuit with:
+1. Uniform superposition initialization: H^tensor_n |0>
+2. Problem Unitary: exp(-i * gamma * H_C)
+3. Standard Transverse Field Mixer: exp(-i * beta * sum X_i) = prod_i Rx(2 * beta)
+Used as an empirical baseline to highlight barren plateaus and poor sampling validity.
+"""
+
+from typing import Dict, List, Tuple, Optional
+import numpy as np
+from qiskit import QuantumCircuit
+from qiskit.circuit import Parameter
+
+from ..hamiltonian.ising_formulation import IsingHamiltonian
+
+
+class StandardQaoaCircuit:
+    """
+    Constructs conventional standard QAOA circuits.
+    """
+
+    def __init__(
+        self,
+        hamiltonian: IsingHamiltonian,
+        depth_p: int = 1
+    ):
+        self.hamiltonian = hamiltonian
+        self.num_qubits = hamiltonian.num_qubits
+        self.depth_p = depth_p
+
+    def build_circuit(
+        self,
+        gamma_values: Optional[List[float]] = None,
+        beta_values: Optional[List[float]] = None,
+        include_measurements: bool = True
+    ) -> Tuple[QuantumCircuit, List[Parameter], List[Parameter]]:
+        """
+        Builds the standard QAOA circuit.
+        """
+        qc = QuantumCircuit(self.num_qubits, self.num_qubits if include_measurements else 0)
+
+        # 1. Standard Uniform Superposition: H on each qubit
+        for i in range(self.num_qubits):
+            qc.h(i)
+        qc.barrier(label="Standard_Init")
+
+        gamma_params = []
+        beta_params = []
+
+        # 2. Alternating layers
+        for layer in range(self.depth_p):
+            if gamma_values is not None:
+                gamma = gamma_values[layer]
+            else:
+                gamma = Parameter(f"gamma_{layer}")
+                gamma_params.append(gamma)
+
+            if beta_values is not None:
+                beta = beta_values[layer]
+            else:
+                beta = Parameter(f"beta_{layer}")
+                beta_params.append(beta)
+
+            # Problem Unitary: exp(-i * gamma * H_C)
+            for i, h in self.hamiltonian.linear_terms.items():
+                if abs(h) > 1e-7:
+                    qc.rz(2.0 * gamma * h, i)
+
+            for (i, j), J in self.hamiltonian.quadratic_terms.items():
+                if abs(J) > 1e-7:
+                    qc.cx(i, j)
+                    qc.rz(2.0 * gamma * J, j)
+                    qc.cx(i, j)
+
+            qc.barrier(label=f"Cost_p{layer}")
+
+            # Standard Transverse Field Mixer: Rx(2 * beta)
+            for i in range(self.num_qubits):
+                qc.rx(2.0 * beta, i)
+
+            qc.barrier(label=f"Std_Mixer_p{layer}")
+
+        # 3. Measurement
+        if include_measurements:
+            qc.measure(range(self.num_qubits), range(self.num_qubits))
+
+        return qc, gamma_params, beta_params

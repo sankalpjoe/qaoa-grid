@@ -1,0 +1,120 @@
+{
+  "network": "IEEE-14",
+  "num_qubits": 8,
+  "candidate_lines": [
+    5,
+    7,
+    14,
+    3,
+    0,
+    8,
+    16,
+    18
+  ],
+  "initiating_outages": [
+    6
+  ],
+  "ground_truth_min_cost": 10.0,
+  "ground_truth_valid_count": 24,
+  "random_p_valid": 0.09375,
+  "gpu_solver_time_ms": 1596.8555999997989,
+  "gpu_device": "cuda (NVIDIA GeForce RTX 5070 Laptop GPU)",
+  "results": [
+    {
+      "method": "HG-WS-QAOA (p=1)",
+      "noise": 0.0,
+      "p_valid": 0.13671875,
+      "expected_cost": 3119850.6811181316,
+      "min_cost": 10.0,
+      "ar": 0.64,
+      "depth": 55,
+      "two_qubit_gates": 15,
+      "swap_estimate": 1,
+      "time_ms": 31.978299999991577
+    },
+    {
+      "method": "HG-WS-QAOA (p=2)",
+      "noise": 0.0,
+      "p_valid": 0.10546875,
+      "expected_cost": 5841189.576075286,
+      "min_cost": 10.0,
+      "ar": 0.5617685305591678,
+      "depth": 108,
+      "two_qubit_gates": 36,
+      "swap_estimate": 4,
+      "time_ms": 28.063700000075187
+    },
+    {
+      "method": "Standard QAOA (p=1)",
+      "noise": 0.0,
+      "p_valid": 0.063720703125,
+      "expected_cost": 12738315.142375791,
+      "min_cost": 10.0,
+      "ar": 0.46774193548387094,
+      "depth": 54,
+      "two_qubit_gates": 15,
+      "swap_estimate": 1,
+      "time_ms": 25.6811999997808
+    },
+    {
+      "method": "Standard QAOA (p=2)",
+      "noise": 0.0,
+      "p_valid": 0.038330078125,
+      "expected_cost": 13991901.42971773,
+      "min_cost": 10.0,
+      "ar": 0.4577259475218659,
+      "depth": 107,
+      "two_qubit_gates": 36,
+      "swap_estimate": 4,
+      "time_ms": 26.82150000009642
+    },
+    {
+      "method": "HG-WS-QAOA (p=1)",
+      "noise": 1.0,
+      "p_valid": 0.131591796875,
+      "expected_cost": 4258786.345595413,
+      "min_cost": 10.0,
+      "ar": 0.6035834266517357,
+      "depth": 55,
+      "two_qubit_gates": 15,
+      "swap_estimate": 1,
+      "time_ms": 27.30760000031296
+    },
+    {
+      "method": "HG-WS-QAOA (p=2)",
+      "noise": 1.0,
+      "p_valid": 0.09423828125,
+      "expected_cost": 7514287.849031172,
+      "min_cost": 10.0,
+      "ar": 0.5545977011494253,
+      "depth": 108,
+      "two_qubit_gates": 36,
+      "swap_estimate": 4,
+      "time_ms": 32.89379999978337
+    },
+    {
+      "method": "Standard QAOA (p=1)",
+      "noise": 1.0,
+      "p_valid": 0.06591796875,
+      "expected_cost": 12911403.750759507,
+      "min_cost": 10.0,
+      "ar": 0.4631217838765009,
+      "depth": 54,
+      "two_qubit_gates": 15,
+      "swap_estimate": 1,
+      "time_ms": 26.934499999697437
+    },
+    {
+      "method": "Standard QAOA (p=2)",
+      "noise": 1.0,
+      "p_valid": 0.04052734375,
+      "expected_cost": 13615883.67938833,
+      "min_cost": 10.0,
+      "ar": 0.45983379501385047,
+      "depth": 107,
+      "two_qubit_gates": 36,
+      "swap_estimate": 4,
+      "time_ms": 31.7536000002292
+    }
+  ]
+}
